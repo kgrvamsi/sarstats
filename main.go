@@ -79,7 +79,7 @@ func getStats() {
 var statsdServer = flag.String("d", ":8125", "Destination statsd server address")
 var statsdPrefix = flag.String("p", "sar", "Statsd prefix for metrics")
 var interval = flag.Duration("i", 10*time.Second, "Interval to send metrics")
-var sd = statsd.NewStatsdClient(*statsdServer, *statsdPrefix)
+var sd = statsd.NewStatsdClient(*statsdServer, *statsdPrefix+".")
 
 func main() {
 	flag.Parse()
